@@ -75,42 +75,48 @@ async function testFunctions() {
         const product1 = await createProduct({
             image: "shirt.png",
             name: "shirt",
-            description: "n jdfjd njdn jdnjcndjcnj jdn vndjvnjdcnjd j njd nvjk"
+            description: "n jdfjd njdn jdnjcndjcnj jdn vndjvnjdcnjd j njd nvjk",
+            price: 2000
         })
         console.log("Создан: ", product1)
 
         const product2 = await createProduct({
             image: "jeans.png",
             name: "jeans",
-            description: "sjkf jjkfbs jbsfhu byfhijs"
+            description: "sjkf jjkfbs jbsfhu byfhijs",
+            price: 3200
         })
         console.log("Создан: ", product2)
 
         const product3 = await createProduct({
             image: "jacket.png",
             name: "jacket", 
-            description: "dbhadawnj bjjwef enfleen"
+            description: "dbhadawnj bjjwef enfleen",
+            price: 7382
         })
         console.log("Создан: ", product3)
 
         const product4 = await createProduct({
             image: "shoes.png",
             name: "shoes",
-            description: "fav abafb dawmf a"
+            description: "fav abafb dawmf a",
+            price: 3900
         })
         console.log("Создан: ", product4)
 
         const product5 = await createProduct({
             image: "hat.png", 
             name: "hat",
-            description: "asdja kakml pe"
+            description: "asdja kakml pe",
+            price: 940
         })
         console.log("Создан: ", product5)
 
         const product6 = await createProduct({
             image: "dress.png",
             name: "dress", 
-            description: "fbsjn ks slls  bhsjopf llmsl fld"
+            description: "fbsjn ks slls  bhsjopf llmsl fld",
+            price: 8900
         })
         console.log("Создан: ", product6)
 

@@ -12,7 +12,8 @@ export const products = pgTable("products", {
     ...commonFields,
     image: varchar("image", { length: 500 }),
     name: varchar("name", { length: 255 }).notNull(),
-    description: varchar("description", {length: 255}).notNull()
+    description: varchar("description", {length: 255}).notNull(),
+    price: integer("price").notNull(),
 });
 
 export const productsRelations = relations(products, ({many}) => ({

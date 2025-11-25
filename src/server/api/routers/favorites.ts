@@ -3,6 +3,7 @@ import { isNull, eq, and } from "drizzle-orm";
 import { db } from "../../db";
 import { favorites } from "../../db/schema";
 import z from "zod";
+import { favoriteSchema } from "@/src/lib/client/shared/schemas/favorites";
 
 export const favoritesRouter = new Elysia({
     prefix: "/favorites"
@@ -22,3 +23,10 @@ export const favoritesRouter = new Elysia({
         userId: z.string()
     })
 })
+
+.post("/", async ({body}) => {
+    return await db.insert(favorites).values(body).returning()
+}, {
+    body: favoriteSchema,
+})
+

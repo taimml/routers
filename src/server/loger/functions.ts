@@ -50,6 +50,7 @@ export async function createProduct(productData: {
     image: string;
     name: string;
     description: string;
+    price: number;
 }) {
     const [newProduct] = await db.insert(products).values(productData).returning();
     return newProduct;
