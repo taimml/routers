@@ -18,12 +18,19 @@ export default function SignUp() {
 	});
 
 	const onFormSubmit = async (data: z.infer<typeof formSchema>) => {
-		await authClient.signUp.email({
-			email: data.email,
-			password: data.password,
-			name: data.name,
-		});
-	};
+        await authClient.signUp.email(
+            {
+                email: data.email,
+                password: data.password,
+                name: data.name,
+            },
+            {
+                onSuccess: () => {
+                    alert("Sign up successful");
+                },
+            },
+        );
+    };
 
 	return (
 		<div className="w-screen h-screen flex items-center justify-center bg-white">
