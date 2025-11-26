@@ -5,22 +5,8 @@
     {
       "idx": 0,
       "version": "7",
-      "when": 1763413081316,
-      "tag": "0000_breezy_captain_midlands",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "7",
-      "when": 1763760327036,
-      "tag": "0001_motionless_earthquake",
-      "breakpoints": true
-    },
-    {
-      "idx": 2,
-      "version": "7",
-      "when": 1764006128100,
-      "tag": "0002_quiet_wild_child",
+      "when": 1764151142029,
+      "tag": "0000_mighty_anita_blake",
       "breakpoints": true
     },
     {

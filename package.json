@@ -12,13 +12,16 @@
   },
   "dependencies": {
     "@elysiajs/cors": "^1.4.0",
+    "@hookform/resolvers": "^5.2.2",
+    "better-auth": "^1.4.1",
     "drizzle-kit": "^0.31.7",
     "drizzle-orm": "^0.44.7",
     "elysia": "^1.4.16",
     "next": "16.0.3",
     "pg": "^8.16.3",
     "react": "19.2.0",
-    "react-dom": "19.2.0"
+    "react-dom": "19.2.0",
+    "react-hook-form": "^7.66.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
