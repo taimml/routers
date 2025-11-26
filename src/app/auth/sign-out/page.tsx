@@ -5,10 +5,14 @@ import { useEffect } from "react";
 
 export default function SignOut() {
 	useEffect(() => {
-		authClient.signOut();
-        window.location.href = "/";
+		const signOutUser = async () => {
+			await authClient.signOut();
+			window.location.href = "/";
+		};
+		
+		signOutUser();
 	}, []);
-
+	
 	return (
 		<div className="w-screen h-screen flex items-center justify-center">
 			
