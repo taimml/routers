@@ -11,6 +11,4 @@ const betterAuthView = async (context: Context) => {
     }
 }
 
-export const userRouter = new Elysia().all("/auth/*", betterAuthView).get("/", async () => {
-    return await db.query.user.findMany()
-})
+export const userRouter = new Elysia().all("/auth/*", betterAuthView)
