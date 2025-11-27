@@ -4,12 +4,15 @@ import { db } from "../../db";
 import { products } from "../../db/schema";
 import z from "zod";
 import { productSchema } from "@/src/lib/client/shared/schemas/products";
-
+import { userService } from "./user";
 
 
 export const productsRouter = new Elysia({
     prefix: "/products"
 })
+
+.use(userService)
+
 .get("/", async () => {
     return await db.query.products.findMany({
         where: isNull(products.deletedAt) 
