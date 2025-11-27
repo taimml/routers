@@ -25,11 +25,11 @@ export const adminRouter = new Elysia({
     hasRole: "admin"
 })
 
-.delete("/users/:id", async ({ params }) => {
-    return await db.delete(user).where(eq(user.id, params.id)).returning();
-}, {
-    hasRole: "admin",
-    params: z.object({
-        id: z.string()
-    })
-})
+// .delete("/users/:id", async ({ params }) => {
+//     return await db.delete(user).where(eq(user.id, params.id)).returning();
+// }, {
+//     hasRole: "admin",
+//     params: z.object({
+//         id: z.string()
+//     })
+// })
