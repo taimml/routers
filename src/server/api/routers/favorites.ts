@@ -2,7 +2,6 @@ import Elysia from "elysia";
 import { isNull, eq, and } from "drizzle-orm";
 import { db } from "../../db";
 import { favorites } from "../../db/schema";
-import z from "zod";
 import { favoriteSchema } from "@/src/lib/client/shared/schemas/favorites";
 import { userService } from "./user";
 
