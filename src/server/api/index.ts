@@ -5,6 +5,7 @@ import { cartRouter } from "./routers/cart";
 import { favoritesRouter } from "./routers/favorites";
 import { usersRouter } from "./routers/user";
 import { adminRouter } from "./routers/admin";
+import { fileRouter } from "./file";
 
 export const app = new Elysia({
     prefix: "/api"
@@ -15,3 +16,4 @@ export const app = new Elysia({
 .use(favoritesRouter)
 .use(usersRouter)
 .use(adminRouter)
+.use(fileRouter)

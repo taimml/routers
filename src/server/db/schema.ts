@@ -1,12 +1,23 @@
 import { integer, pgTable, timestamp, varchar } from "drizzle-orm/pg-core";
-import { relations } from "drizzle-orm";
+import { createTableRelationsHelpers, placeholder, relations } from "drizzle-orm";
+import { contentType } from "mime-types";
 export * from "./auth-schema"
+import { text } from "drizzle-orm/pg-core";
 
 const commonFields = {
     id: varchar("id", { length: 255 }).primaryKey().$defaultFn(() => crypto.randomUUID()),
     createdAt: timestamp("created_at").defaultNow(),
     deletedAt: timestamp("deleted_at"),
 }
+
+export const files = pgTable("files", {
+    id: varchar("id", { length: 255 }).primaryKey().notNull().$defaultFn(() => crypto.randomUUID()),
+    createdAt: timestamp("created_at").notNull().defaultNow(),
+    fileName: varchar("file_name", { length: 255 }).notNull(),
+    fileSize: integer("file_size").notNull(),
+    contentType: varchar("content_type", { length: 255 }).notNull(),
+    placeholder: text("placeholder"),
+})
 
 export const products = pgTable("products", {
     // id: varchar("id", { length: 255 }).primaryKey().$defaultFn(() => crypto.randomUUID()),

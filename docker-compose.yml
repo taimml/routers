@@ -7,10 +7,24 @@ services:
       POSTGRES_USER: "postgres"
       POSTGRES_PASSWORD: "postgres"
     ports:
-      - "5432:5432"
+      - "5433:5433"
   redis:
     image: redis:7-alpine
     container_name: redis
     ports:
       - 6379:6379
     restart: always
+  minio:
+    image: "minio/minio:latest"
+    ports:
+      - "9000:9000"
+      - "9090:9090"
+    environment:
+      MINIO_ROOT_USER: "root"
+      MINIO_ROOT_PASSWORD: "12345678"
+    volumes:
+      - "minio:/data/minio"
+    command: minio server /data/minio --console-addres ":9090"
+    restart: always
+volumes:
+  minio:
