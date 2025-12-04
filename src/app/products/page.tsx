@@ -41,11 +41,47 @@ const createMutation = useMutation({
         },
     });
 
+    const handleSubmit = (data: z.infer<typeof productSchema>) => {
+        createMutation.mutate(data);
+    };
 
+    const onError = (error: any) => {
+        console.log(error);
+    };
 
     return (
-        <div>
-            <p>dsasasaflsfas</p>
+        <div className=" container mx-auto mt-20 flex flex-col gap-4">
+        <p>{products?.length}</p>
+        {products?.map((p) => (
+            <div className="flex flex-col gap-4 p-4 rounded-xl bg-red-300">
+            <p>{p.name}</p>
+            <p>{p.description}</p>
+            <p>{p.price}</p>
+            </div>
+        ))}
+        <form
+            onSubmit={form.handleSubmit(handleSubmit)}
+            onError={onError}
+            className="flex flex-col gap-4"
+        >
+            <input className="bg-white text-black" {...form.register("name")} />
+            <input
+            className="bg-white text-black"
+            {...form.register("description")}
+            />
+            <input
+            className="bg-white text-black"
+            {...form.register("price", { valueAsNumber: true })}
+            type="number"
+            />
+            <input className="bg-white text-black" {...form.register("image")} />
+            {/* <button onClick={() => createMutation.mutate(form.getValues())}>
+            Create
+            </button> */}
+            <button className="bg-red-500 text-white" type="submit">
+            Create
+            </button>
+        </form>
         </div>
     )
 }
