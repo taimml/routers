@@ -14,17 +14,17 @@ services:
     ports:
       - 6379:6379
     restart: always
-  minio:
+  minio: 
     image: "minio/minio:latest"
-    ports:
+    ports: 
       - "9000:9000"
       - "9090:9090"
-    environment:
+    environment: 
       MINIO_ROOT_USER: "root"
       MINIO_ROOT_PASSWORD: "12345678"
-    volumes:
+    volumes: 
       - "minio:/data/minio"
-    command: minio server /data/minio --console-addres ":9090"
+    command: minio server /data/minio --console-address ":9090"
     restart: always
 volumes:
   minio:
