@@ -3,7 +3,7 @@ import { isNull, eq, ilike } from "drizzle-orm";
 import { db } from "../../db";
 import { products } from "../../db/schema";
 import z from "zod";
-import { productSchema } from "@/src/lib/client/shared/schemas/products";
+import { productSchema } from "@/src/lib/shared/schemas/products";
 import { userService } from "./user";
 import { ServerCached, DEFAULT_TTL, InvalidateCached } from "../../redis";
 

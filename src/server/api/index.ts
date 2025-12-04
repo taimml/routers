@@ -6,6 +6,8 @@ import { favoritesRouter } from "./routers/favorites";
 import { usersRouter } from "./routers/user";
 import { adminRouter } from "./routers/admin";
 import { fileRouter } from "./file";
+import { treaty } from "@elysiajs/eden";
+import { headers as getHeaders } from "next/headers";
 
 export const app = new Elysia({
     prefix: "/api"
@@ -17,3 +19,17 @@ export const app = new Elysia({
 .use(usersRouter)
 .use(adminRouter)
 .use(fileRouter)
+
+export type App = typeof app;
+
+export const api = treaty(app).api;
+
+export async function headers(): Promise<Record<string, string | undefined>>{
+    const h = await getHeaders()
+    const headers: Record<string, string | undefined> = {}
+    for (const [key, value] of h.entries()) {
+        headers[key] = value
+    }
+
+    return headers;
+}

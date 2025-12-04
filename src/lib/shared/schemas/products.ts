@@ -6,4 +6,3 @@ export const productSchema = z.object({
     description: z.string(),
     price: z.number().min(10, "Minimum price is 10"),
 })
-
