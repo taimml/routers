@@ -1,8 +1,8 @@
 'use client';
 
+import { api } from "@/src/lib/client/api";
 import { queryClient } from "@/src/lib/client/query-client";
 import { productSchema } from "@/src/lib/shared/schemas/products";
-import { api } from "@/src/server/api";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
